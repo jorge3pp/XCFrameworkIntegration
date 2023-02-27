@@ -1,0 +1,46 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "PackageDepRoot",
+        "printedName": "PackageDepRoot",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PackageDepRoot",
+                "printedName": "PackageDepRoot.PackageDepRoot",
+                "usr": "s:14PackageDepRootAAV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14PackageDepRootAAVABycfc",
+            "mangledName": "$s14PackageDepRootAAVABycfc",
+            "moduleName": "PackageDepRoot",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:14PackageDepRootAAV",
+        "mangledName": "$s14PackageDepRootAAV",
+        "moduleName": "PackageDepRoot",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}
