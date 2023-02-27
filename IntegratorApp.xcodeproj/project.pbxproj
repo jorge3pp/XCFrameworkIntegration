@@ -14,23 +14,8 @@
 		1C0EE55E29ACC6E000D81AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55D29ACC6E000D81AD8 /* Assets.xcassets */; };
 		1C0EE56129ACC6E000D81AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55F29ACC6E000D81AD8 /* LaunchScreen.storyboard */; };
 		1C0EE56A29ACD93300D81AD8 /* PackageDepA.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */; };
-		1C0EE56B29ACD93300D81AD8 /* PackageDepA.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C0EE56E29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56D29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1C0EE56C29ACD93300D81AD8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1C0EE56B29ACD93300D81AD8 /* PackageDepA.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C0EE55129ACC6D900D81AD8 /* IntegratorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegratorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +85,6 @@
 				1C0EE54D29ACC6D900D81AD8 /* Sources */,
 				1C0EE54E29ACC6D900D81AD8 /* Frameworks */,
 				1C0EE54F29ACC6D900D81AD8 /* Resources */,
-				1C0EE56C29ACD93300D81AD8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

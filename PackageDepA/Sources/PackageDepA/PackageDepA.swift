@@ -5,5 +5,6 @@ public struct PackageDepA {
     
     public init() {
         print("PackageDepA \(version)")
+        PackageDepRoot()
     }
 }

@@ -134,6 +134,7 @@ generate_xcframework() {
 
 build_project () {
     rm -rf $BUILD_DIR
+    rm -rf $XCFRAMEWORK_OUPUT
     updateDependencies
     convert_to_dynamic
     (ready_to_fail && create_frameworks) || create_frameworks
