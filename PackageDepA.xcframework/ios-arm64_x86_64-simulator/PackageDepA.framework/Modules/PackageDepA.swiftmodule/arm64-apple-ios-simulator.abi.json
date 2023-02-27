@@ -1,0 +1,147 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "PackageDepRoot",
+        "printedName": "PackageDepRoot",
+        "declKind": "Import",
+        "moduleName": "PackageDepA"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PackageDepA",
+        "printedName": "PackageDepA",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11PackageDepAAAV7versionSSvp",
+            "mangledName": "$s11PackageDepAAAV7versionSSvp",
+            "moduleName": "PackageDepA",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11PackageDepAAAV7versionSSvg",
+                "mangledName": "$s11PackageDepAAAV7versionSSvg",
+                "moduleName": "PackageDepA",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11PackageDepAAAV7versionSSvs",
+                "mangledName": "$s11PackageDepAAAV7versionSSvs",
+                "moduleName": "PackageDepA",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11PackageDepAAAV7versionSSvM",
+                "mangledName": "$s11PackageDepAAAV7versionSSvM",
+                "moduleName": "PackageDepA",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PackageDepA",
+                "printedName": "PackageDepA.PackageDepA",
+                "usr": "s:11PackageDepAAAV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11PackageDepAAAVABycfc",
+            "mangledName": "$s11PackageDepAAAVABycfc",
+            "moduleName": "PackageDepA",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11PackageDepAAAV",
+        "mangledName": "$s11PackageDepAAAV",
+        "moduleName": "PackageDepA",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/jpoveda\/Repositorios\/XCFrameworkIntegration\/PackageDepA\/Sources\/PackageDepA\/PackageDepA.swift",
+      "kind": "StringLiteral",
+      "offset": 76,
+      "length": 7,
+      "value": "\"1.0.0\""
+    }
+  ]
+}
