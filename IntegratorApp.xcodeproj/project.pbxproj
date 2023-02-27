@@ -13,7 +13,23 @@
 		1C0EE55C29ACC6D900D81AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55A29ACC6D900D81AD8 /* Main.storyboard */; };
 		1C0EE55E29ACC6E000D81AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55D29ACC6E000D81AD8 /* Assets.xcassets */; };
 		1C0EE56129ACC6E000D81AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55F29ACC6E000D81AD8 /* LaunchScreen.storyboard */; };
+		1C0EE56A29ACD93300D81AD8 /* PackageDepA.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */; };
+		1C0EE56B29ACD93300D81AD8 /* PackageDepA.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1C0EE56C29ACD93300D81AD8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C0EE56B29ACD93300D81AD8 /* PackageDepA.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C0EE55129ACC6D900D81AD8 /* IntegratorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegratorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		1C0EE55D29ACC6E000D81AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0EE56029ACC6E000D81AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C0EE56229ACC6E000D81AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PackageDepA.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0EE56A29ACD93300D81AD8 /* PackageDepA.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 		1C0EE54829ACC6D900D81AD8 = {
 			isa = PBXGroup;
 			children = (
+				1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */,
 				1C0EE55329ACC6D900D81AD8 /* IntegratorApp */,
 				1C0EE55229ACC6D900D81AD8 /* Products */,
 			);
@@ -77,6 +96,7 @@
 				1C0EE54D29ACC6D900D81AD8 /* Sources */,
 				1C0EE54E29ACC6D900D81AD8 /* Frameworks */,
 				1C0EE54F29ACC6D900D81AD8 /* Resources */,
+				1C0EE56C29ACD93300D81AD8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
