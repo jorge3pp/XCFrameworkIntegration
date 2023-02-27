@@ -6,6 +6,6 @@ final class PackageDepRootTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(PackageDepRoot().text, "Hello, World!")
+        XCTAssertEqual(PackageDepRoot().version, "1.0.0")
     }
 }
