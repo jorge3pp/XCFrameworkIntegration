@@ -14,7 +14,7 @@
 		1C0EE55E29ACC6E000D81AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55D29ACC6E000D81AD8 /* Assets.xcassets */; };
 		1C0EE56129ACC6E000D81AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EE55F29ACC6E000D81AD8 /* LaunchScreen.storyboard */; };
 		1C0EE56A29ACD93300D81AD8 /* PackageDepA.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */; };
-		1C0EE56E29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE56D29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework */; };
+		1C0EE57229AE275A00D81AD8 /* PackageDepRoot.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EE57129AE275900D81AD8 /* PackageDepRoot.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		1C0EE56029ACC6E000D81AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C0EE56229ACC6E000D81AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PackageDepA.xcframework; sourceTree = "<group>"; };
-		1C0EE56D29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PackageDepRoot1.1.0.xcframework; sourceTree = "<group>"; };
+		1C0EE57129AE275900D81AD8 /* PackageDepRoot.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PackageDepRoot.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,8 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0EE57229AE275A00D81AD8 /* PackageDepRoot.xcframework in Frameworks */,
 				1C0EE56A29ACD93300D81AD8 /* PackageDepA.xcframework in Frameworks */,
-				1C0EE56E29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +46,7 @@
 		1C0EE54829ACC6D900D81AD8 = {
 			isa = PBXGroup;
 			children = (
-				1C0EE56D29ACE16C00D81AD8 /* PackageDepRoot1.1.0.xcframework */,
+				1C0EE57129AE275900D81AD8 /* PackageDepRoot.xcframework */,
 				1C0EE56829ACD91700D81AD8 /* PackageDepA.xcframework */,
 				1C0EE55329ACC6D900D81AD8 /* IntegratorApp */,
 				1C0EE55229ACC6D900D81AD8 /* Products */,

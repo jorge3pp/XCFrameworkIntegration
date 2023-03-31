@@ -1,0 +1,140 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "PackageDepRoot",
+        "printedName": "PackageDepRoot",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14PackageDepRootAAV7versionSSvp",
+            "mangledName": "$s14PackageDepRootAAV7versionSSvp",
+            "moduleName": "PackageDepRoot",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14PackageDepRootAAV7versionSSvg",
+                "mangledName": "$s14PackageDepRootAAV7versionSSvg",
+                "moduleName": "PackageDepRoot",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14PackageDepRootAAV7versionSSvs",
+                "mangledName": "$s14PackageDepRootAAV7versionSSvs",
+                "moduleName": "PackageDepRoot",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14PackageDepRootAAV7versionSSvM",
+                "mangledName": "$s14PackageDepRootAAV7versionSSvM",
+                "moduleName": "PackageDepRoot",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PackageDepRoot",
+                "printedName": "PackageDepRoot.PackageDepRoot",
+                "usr": "s:14PackageDepRootAAV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14PackageDepRootAAVABycfc",
+            "mangledName": "$s14PackageDepRootAAVABycfc",
+            "moduleName": "PackageDepRoot",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:14PackageDepRootAAV",
+        "mangledName": "$s14PackageDepRootAAV",
+        "moduleName": "PackageDepRoot",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/jpoveda\/Repositorios\/XCFrameworkIntegration\/PackageDepRoot\/Sources\/PackageDepRoot\/PackageDepRoot.swift",
+      "kind": "StringLiteral",
+      "offset": 56,
+      "length": 7,
+      "value": "\"1.1.0\""
+    }
+  ]
+}

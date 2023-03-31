@@ -50,7 +50,71 @@ perl -i -p0e 's/type: .dynamic,//g' $PROJECT_DIR/Package.swift
 perl -i -p0e 's/(library[^,]*,)/$1 /g' $PROJECT_DIR/Package.swift
 }
 
-create_frameworks(){
+create_static_frameworks() {
+for PLATFORM in "iOS" "iOS Simulator"; do
+
+    case $PLATFORM in
+    "iOS")
+    RELEASE_ARCH="Release-iphoneos"
+    ARCHS=$ARCH_IPHONE
+    ;;
+    "iOS Simulator")
+    RELEASE_ARCH="Release-iphonesimulator"
+    ARCHS=$ARCH_SIMULATOR
+    ;;
+    esac
+
+    ARCHIVE_PATH=$BUILD_DIR/$RELEASE_ARCH
+    xcodebuild archive -scheme $TARGET \
+            -destination "generic/platform=$PLATFORM" \
+            -archivePath $ARCHIVE_PATH \
+            -derivedDataPath $BUILD_DIR \
+            ARCHS="$ARCHS" \
+            SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+            
+    FRAMEWORK_PATH="$ARCHIVE_PATH.xcarchive/Products/Users/jpoveda/$TARGET.framework"
+    mkdir $FRAMEWORK_PATH
+
+    BUILD_PRODUCTS_PATH="$BUILD_DIR/Build/Intermediates.noindex/ArchiveIntermediates/$TARGET/BuildProductsPath"
+    RELEASE_PATH="$BUILD_PRODUCTS_PATH/$RELEASE_ARCH"
+    SWIFT_MODULE_PATH="$RELEASE_PATH/$TARGET.swiftmodule"
+    RESOURCES_BUNDLE_PATH="$RELEASE_PATH/${TARGET}_${TARGET}.bundle"
+
+    # Copy Swift modules
+    if [ -d $SWIFT_MODULE_PATH ]
+    then
+        cp -r $SWIFT_MODULE_PATH $FRAMEWORK_PATH
+    else
+        # In case there are no modules, assume C/ObjC library and create module map
+        echo "module $TARGET { export * }" > $FRAMEWORK_PATH/module.modulemap
+        perl -lne 'print $1 if /\<'${TARGET}'\/(\S+.h)/' $TARGET/$TARGET    .h | \
+        xargs -I {} find . -name "{}" -print | \
+        xargs -I {} cp {} $HEADERS_PATH/.
+        cp $TARGET/$TARGET.h $HEADERS_PATH/.
+    fi
+    
+    #Copy .o to FRAMEWORK_PATH
+    cp -r $ARCHIVE_PATH.xcarchive/Products/Users/*/**/*.o $FRAMEWORK_PATH
+
+    #Create .a from .o (Mach-o)
+    lipo -create $FRAMEWORK_PATH/$TARGET.o -output $FRAMEWORK_PATH/$TARGET.a
+
+    # Copy resources bundle, if exists
+    if [ -e $RESOURCES_BUNDLE_PATH ]
+    then
+        cp -r $RESOURCES_BUNDLE_PATH $FRAMEWORK_PATH
+    fi
+
+    #Delete Frameworks Folder
+    if [ -e $FRAMEWORK_PATH/Frameworks ]
+    then
+        rm -rf $FRAMEWORK_PATH/Frameworks
+    fi
+
+done
+}
+
+create_dynamic_frameworks(){
 
 for PLATFORM in "iOS" "iOS Simulator"; do
 
@@ -122,8 +186,7 @@ xcodebuild  -workspace $PROJECT_DIR -scheme $TARGET \
 
 }
 
-
-generate_xcframework() {
+generate_dynamic_xcframework() {
     cd $BUILD_DIR
      (xcodebuild -create-xcframework \
      -framework Release-iphoneos.xcarchive/Products/usr/local/lib/$TARGET.framework \
@@ -131,15 +194,30 @@ generate_xcframework() {
      -allow-internal-distribution -output $XCFRAMEWORK_OUPUT || (echo -e "\n\n${RED}CLEAN and BUILD for Target '${TARGET}' => FAILED\n\n${NC}" && exit 1)) &&  echo -e "\n\n${GREEN}CLEAN and BUILD for Target '${TARGET}' => SUCCEEDED\n\n${NC}"
 }
 
+generate_static_xcframework() {
+    cd $BUILD_DIR
+     (xcodebuild -create-xcframework \
+     -library Release-iphoneos.xcarchive/Products/Users/jpoveda/$TARGET.framework/$TARGET.a \
+     -library Release-iphonesimulator.xcarchive/Products/Users/jpoveda/$TARGET.framework/$TARGET.a \
+     -allow-internal-distribution -output $XCFRAMEWORK_OUPUT || (echo -e "\n\n${RED}CLEAN and BUILD for Target '${TARGET}' => FAILED\n\n${NC}" && exit 1)) &&  echo -e "\n\n${GREEN}CLEAN and BUILD for Target '${TARGET}' => SUCCEEDED\n\n${NC}"
+}
 
-build_project () {
+build_dynamic_project () {
     rm -rf $BUILD_DIR
     rm -rf $XCFRAMEWORK_OUPUT
     updateDependencies
     convert_to_dynamic
-    (ready_to_fail && create_frameworks) || create_frameworks
-    generate_xcframework
+    (ready_to_fail && create_dynamic_frameworks) || create_dynamic_frameworks
     convert_to_normal
+    generate_dynamic_xcframework
 }
 
-build_project
+build_static_project () {
+    rm -rf $BUILD_DIR
+    rm -rf $XCFRAMEWORK_OUPUT
+    updateDependencies
+    (ready_to_fail && create_static_frameworks) || create_static_frameworks
+    generate_static_xcframework
+}
+
+build_static_project
